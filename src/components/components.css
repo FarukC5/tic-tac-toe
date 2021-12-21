@@ -1,0 +1,145 @@
+.Login {
+  border: 1px solid cyan;
+  border-radius: 4px;
+  width: 280px;
+  height: 360px;
+  background-color: #282c34;
+  margin: 0px;
+  padding: 10px;
+
+}
+
+.Login-screen {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 1px;
+  height: 355px;
+  transition: ease-in-out;
+  transition-duration: 5s;  
+}
+
+.scroll {
+  overflow: hidden;
+  overflow-y: auto;
+  margin: 3px;
+  padding: 3px;
+  background-color: rgb(56, 35, 76);
+  border: 1px solid cyan;
+  max-height: 240px;
+  border-radius: 3px;
+  margin-top: 0px;
+}
+
+.Login-screen p {
+  font-weight: lighter;
+}
+
+.Login-screen input {
+  height: 30px;
+  width: 70%;
+  border: 1px solid cyan;
+  background-color: #282c34;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: 10px;
+}
+
+.Login button,
+.button1 {
+  height: 35px;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: bolder;
+
+}
+
+.button1:enabled {
+  background-color: rgba(0, 255, 255, 0.652);
+  border-radius: 5px;
+  border: 0;
+}
+
+.button1:active {
+  background-color: cyan;
+  border-radius: 5px;
+  border: 1px solid #282c34;
+}
+
+.Board-wrapp {
+  display: flex;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+}
+
+table tr {
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  margin: 10px;
+}
+.span1 {
+  padding-top: 25px;
+}
+
+table td {
+  padding: 0;
+  border: 1px solid cyan;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10vmin;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.turn {
+  color: cyan;
+}
+
+tr td{
+  color: cyan;
+}
+
+.Login-screen button,
+.Board-wrapp button {
+  height: 35px;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: bolder;
+  margin: 0px;
+}
+
+.popup {
+  position: fixed;
+  top: 38%;
+  right: 50%;
+  left: 50%;
+  width: 280px;
+  height: 30%;
+  /*bottom: 60%;
+  */
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: auto;
+  margin: 0px;
+  padding: 10px;
+ /* background-color: rgb(76, 0, 130);
+ */
+ background-color:rgb(87, 4, 150);
+ border: 1px solid cyan;
+  border-radius: 3px;
+  margin-top: 0px;
+}
