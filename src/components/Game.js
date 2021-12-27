@@ -7,6 +7,8 @@ const Game = () => {
   const [player2, setPlayer2] = useState("");
   const [players, setPlayers] = useState([]);
   const [trigger, setTrigger] = useState(false);
+  const [gameHistory, setGameHistory] = useState([]);
+
 
   useEffect(() => {
     const temp = localStorage.getItem("players");
@@ -20,6 +22,21 @@ const Game = () => {
     const temp = JSON.stringify(players);
     localStorage.setItem("players", temp);
   }, [players]);
+
+
+
+  useEffect(() => {
+    const temp2 = localStorage.getItem("gameHistory");
+    const loadedGameHistory = JSON.parse(temp2);
+    if (loadedGameHistory) {
+      setGameHistory(loadedGameHistory);
+    }
+  }, []);
+
+  useEffect(() => {
+    const temp2 = JSON.stringify(gameHistory);
+    localStorage.setItem("gameHistory", temp2);
+  }, [gameHistory]);
 
   const addNewPlayerHandler = (e) => {
     e.preventDefault();
@@ -40,16 +57,23 @@ const Game = () => {
 
   const newGame = () => {
     setPlayers([]);
+    setGameHistory([]);
   };
 
   return (
-    <div>
+    
+    
+    <div className="main-container">
+     <p>Tic Tac Toe</p>
+     
       {[...players].length > 1 && (
         <Board
           players={players}
           newGame={newGame}
           trigger={trigger}
           setTrigger={setTrigger}
+          gameHistory={gameHistory}
+          setGameHistory={setGameHistory}
         />
       )}
       {[...players].length < 1 && (
