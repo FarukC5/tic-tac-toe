@@ -1,22 +1,89 @@
 .Login {
   border: 1px solid cyan;
   border-radius: 4px;
-  width: 280px;
-  height: 360px;
   background-color: #282c34;
   margin: 0px;
   padding: 10px;
-
+  width: 50%;
+  color: white;
 }
 
 .Login-screen {
   display: flex;
   flex-direction: column;
   align-content: center;
-  padding: 1px;
-  height: 355px;
-  transition: ease-in-out;
-  transition-duration: 5s;  
+  padding: 0 5% 5% 5%;
+}
+
+.Login-screen h2 {
+  font-weight: normal;
+  font-size: x-large;
+}
+
+.Login-screen form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Login-screen input {
+  height: 40px;
+  width: 70%;
+  border: 1px solid cyan;
+  background-color: #282c34;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: 10px;
+}
+/*
+.Login-screen button {
+ height: 2200px;
+  width: 200px;
+  border-radius: 15px;
+  font-weight: bolder;
+
+}
+*/
+
+.Board {
+  border: 1px solid cyan;
+  border-radius: 4px;
+  /* min-width:  600px;
+  min-height: 580px;
+ */
+  background-color: #282c34;
+  margin: 0px;
+  padding: 10px;
+  width: 50%;
+  color: white;
+}
+
+.Board-screen {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 1px 5% 3% 5%;
+}
+
+.subBoard-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2%;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-container p {
+  margin: 2px;
+  font-size: x-large;
+  font-weight: bolder;
 }
 
 .scroll {
@@ -31,44 +98,6 @@
   margin-top: 0px;
 }
 
-.Login-screen p {
-  font-weight: lighter;
-}
-
-.Login-screen input {
-  height: 30px;
-  width: 70%;
-  border: 1px solid cyan;
-  background-color: #282c34;
-  color: white;
-  border-radius: 5px;
-  outline: none;
-  font-family: inherit;
-  font-size: inherit;
-  padding-left: 10px;
-}
-
-.Login button,
-.button1 {
-  height: 35px;
-  width: 100%;
-  border-radius: 5px;
-  font-weight: bolder;
-
-}
-
-.button1:enabled {
-  background-color: rgba(0, 255, 255, 0.652);
-  border-radius: 5px;
-  border: 0;
-}
-
-.button1:active {
-  background-color: cyan;
-  border-radius: 5px;
-  border: 1px solid #282c34;
-}
-
 .Board-wrapp {
   display: flex;
   justify-content: center;
@@ -76,6 +105,246 @@
   flex-direction: column;
   align-items: center;
   margin-top: 5px;
+  width: 60%;
+  background-color: #282c34;
+  border: 1px solid cyan;
+}
+
+.subBoard-screen tr {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+tbody td {
+  width: 70px;
+  min-width: 30px;
+  max-width: 200px;
+  height: 70px;
+  min-height: 30px;
+  max-height: 200px;
+  background-color: #282c34;
+  padding: 0;
+  border: 1px solid cyan;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*
+@media only screen and (min-height: 1024px) {
+  tbody td {
+    width: 130px;
+    height: 130px;
+  
+  }
+  .Navbar-items {
+    font-size: x-large;
+  }
+
+
+  .close-button span {
+    font-size: x-large;
+  }
+
+  .close-button p {
+    font-size: 200%;
+  }
+.popup {
+  font-size: xx-large;
+}
+  
+
+}
+
+@media only screen and (min-width: 280px) {
+  
+  .Board {
+    width: 90%;
+  }
+  
+}
+
+@media only screen and (width: 1024px) {
+  .Board {
+    width: 90%;
+  }
+  
+}
+*/
+/*
+@media only screen and (min-height: 1023px) {
+  tbody td {
+    width: 130px;
+    height: 2130px;
+  
+  }
+  .Navbar-items {
+    font-size: x-large;
+  }
+
+
+  .close-button span {
+    font-size: x-large;
+  }
+
+  .close-button p {
+    font-size: 200%;
+  }
+.popup {
+  font-size: xx-large;
+}
+  
+}
+*/
+
+/* za Nest Hub, Nest Hub Max */
+@media only screen and (min-width: 1024px) {
+  tbody td {
+    width: 115px;
+    height: 115px;
+  }
+
+  .Board-screen {
+    width: 90%;
+  }
+
+  .Navbar-items {
+    font-size: x-large;
+  }
+
+  .close-button span {
+    font-size: x-large;
+  }
+
+  .close-button p {
+    font-size: 200%;
+  }
+
+  .close-button button {
+    width: 40px;
+    font-size: x-large;
+  }
+
+  .popup {
+    font-size: x-large;
+  }
+  .Board h4 {
+    font-size: 22px;
+  }
+}
+
+/* za IPad & IPad Pro*/
+
+@media only screen and (min-height: 1024px) {
+  .Login {
+    width: 90%;
+  }
+
+  tbody td {
+    width: 160px;
+    height: 160px;
+  }
+
+  .Board {
+    width: 90%;
+  }
+
+  .Navbar-items {
+    font-size: x-large;
+  }
+
+  .close-button span {
+    font-size: xx-large;
+  }
+
+  .close-button button {
+    width: 50px;
+    font-size: x-large;
+  }
+
+  .close-button p {
+    font-size: 200%;
+  }
+  .popup {
+    font-size: xx-large;
+  }
+
+  .Login-screen button,
+  .Board-wrapp button,
+  .Board-screen button,
+  .End-game-screen button {
+    font-size: xx-large;
+    height: 60px;
+  }
+
+  .button1:disabled {
+    width: 100%;
+    font-size: xx-large;
+    height: 60px;
+  }
+
+  .button1:enabled {
+    font-size: xx-large;
+    height: 60px;
+  }
+
+  .button1:active {
+    font-size: x-large;
+    height: 60px;
+    font-weight: bolder;
+  }
+
+  .Login-screen input {
+    height: 60px;
+    font-size: xx-large;
+  }
+
+  .Login-screen h2 {
+    font-size: xx-large;
+  }
+
+  .Navbar-items {
+    font-size: xx-large;
+  }
+
+  .span12 span {
+    font-size: xx-large;
+  }
+
+  .Board h4 {
+    font-size: 40px;
+  }
+
+.main-container p  {
+  font-size: 50px;
+}
+}
+
+/* za mobitele*/
+@media only screen and (max-width: 700px) {
+  .Login {
+    width: 90%;
+  }
+
+  /*
+tbody td {
+  width: 85px;
+  height: 85px;  
+}
+*/
+
+  .Board {
+    width: 90%;
+  }
+
+  .Login-screen input {
+    width: 95%;
+  }
+  .Navbar-items {
+    font-size: 95%;
+  }
 }
 
 table tr {
@@ -90,42 +359,60 @@ table {
   padding-top: 25px;
 }
 
-table td {
-  padding: 0;
-  border: 1px solid cyan;
-  width: 60px;
-  height: 60px;
+.span12 {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
   align-items: center;
-  font-size: 10vmin;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
+  justify-content: center;
+  padding-top: 5px;
+  font-size: x-large;
 }
 
 .turn {
   color: cyan;
 }
 
-tr td{
+tr td {
   color: cyan;
+  font-size: 400%;
+}
+
+.button1:disabled {
+  width: 100%;
+}
+
+.button1:enabled {
+  background-color: cyan;
+  border-radius: 5px;
+  border: 0;
+  width: 100%;
+}
+
+.button1:active {
+  background-color: cyan;
+  border-radius: 5px;
+  border: 1px solid #282c34;
 }
 
 .Login-screen button,
-.Board-wrapp button {
-  height: 35px;
-  width: 100%;
+.Board-wrapp button,
+.Board-screen button,
+.End-game-screen button {
+  height: 40px;
+  color: #282c34;
+  width: 90%;
   border-radius: 5px;
+  font-size: large;
   font-weight: bolder;
   margin: 0px;
 }
 
 .popup {
-  position: fixed;
-  top: 38%;
+  position: absolute;
+  top: 28%;
   right: 50%;
   left: 50%;
-  width: 280px;
+  width: 70%;
   height: 30%;
   /*bottom: 60%;
   */
@@ -136,10 +423,32 @@ tr td{
   overflow-x: auto;
   margin: 0px;
   padding: 10px;
- /* background-color: rgb(76, 0, 130);
+  /* background-color: rgb(76, 0, 130);
  */
- background-color:rgb(87, 4, 150);
- border: 1px solid cyan;
+  background-color: rgb(87, 4, 150);
+  border: 1px solid cyan;
   border-radius: 3px;
   margin-top: 0px;
+}
+
+.close-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-button button {
+  border: none;
+  cursor: pointer;
+  color: black;
+}
+
+.Navbar-items span {
+  font-weight: lighter;
+  font-size: larger;
+  margin: 0;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid rgb(158, 43, 43);
+  position: inherit;
 }
