@@ -4,9 +4,11 @@ import "./components.css";
 const EndGame = ({ win, wannaTryAgain }) => {
  
   return (
-    <div className="Login">
-      <div className="Login-screen">
-        <h4 style={{ display: "flex", justifyContent: "center" }}> {win} </h4>
+    <div className="End-game">
+      &nbsp;
+      <div className="End-game-screen">
+        <h4 style={{ display: "flex", justifyContent: "center" /*, fontSize:"150%"*/ }}> {win} </h4>
+       &nbsp;
         <div>
           <button className="button1" onClick={wannaTryAgain}>
             Wanna Try again?

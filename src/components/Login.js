@@ -19,12 +19,11 @@ const Login = ({
   return (
     <div className="Login">
      &nbsp; &nbsp;
-      <div className="Login-screen">
-        <p>Player 1 </p>
-
+        <div className="Login-screen">
         <form >
+        <h2>Player 1 </h2>
           <input onInput={playerChangeHandler1} type="text" />
-          <p>Player 2 </p>
+          <h2>Player 2 </h2>
           <input
             onChange={(e) => {
               checkLenghtHandler(e);
@@ -32,11 +31,9 @@ const Login = ({
             onInput={playerChangeHandler2}
             type="text"
           />
-         
           &nbsp; &nbsp;
           <div className="span1">
           &nbsp; &nbsp;
-          
           <button
             type="submit"
             className="button1"
@@ -47,7 +44,7 @@ const Login = ({
           </button>
           </div>
         </form>
-      </div>
+     </div>
     </div>
   );
 };
