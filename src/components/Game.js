@@ -9,7 +9,6 @@ const Game = () => {
   const [trigger, setTrigger] = useState(false);
   const [gameHistory, setGameHistory] = useState([]);
 
-
   useEffect(() => {
     const temp = localStorage.getItem("players");
     const loadedPlayers = JSON.parse(temp);
@@ -22,8 +21,6 @@ const Game = () => {
     const temp = JSON.stringify(players);
     localStorage.setItem("players", temp);
   }, [players]);
-
-
 
   useEffect(() => {
     const temp2 = localStorage.getItem("gameHistory");
@@ -41,9 +38,13 @@ const Game = () => {
   const addNewPlayerHandler = (e) => {
     e.preventDefault();
     setTrigger(true);
-    if (player2 !== "" && player1 !== "") {
+    if (player1 === player2) {
+    alert("Enter different player names");
+    return;
+    }
+    else if (player2 !== "" && player1 !== "") {
       setPlayers((prevPlayers) => prevPlayers.concat(player1, player2));
-    } else alert("enter player names");
+    } else alert("Enter player names");
     return;
   };
 
@@ -61,8 +62,6 @@ const Game = () => {
   };
 
   return (
-    
-    
     <div className="main-container">
      <p>Tic Tac Toe</p>
      
