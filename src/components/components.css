@@ -37,22 +37,10 @@
   font-size: inherit;
   padding-left: 10px;
 }
-/*
-.Login-screen button {
- height: 2200px;
-  width: 200px;
-  border-radius: 15px;
-  font-weight: bolder;
-
-}
-*/
 
 .Board {
   border: 1px solid cyan;
   border-radius: 4px;
-  /* min-width:  600px;
-  min-height: 580px;
- */
   background-color: #282c34;
   margin: 0px;
   padding: 10px;
@@ -84,18 +72,6 @@
   margin: 2px;
   font-size: x-large;
   font-weight: bolder;
-}
-
-.scroll {
-  overflow: hidden;
-  overflow-y: auto;
-  margin: 3px;
-  padding: 3px;
-  background-color: rgb(56, 35, 76);
-  border: 1px solid cyan;
-  max-height: 240px;
-  border-radius: 3px;
-  margin-top: 0px;
 }
 
 .Board-wrapp {
@@ -131,73 +107,6 @@ tbody td {
   align-items: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
-/*
-@media only screen and (min-height: 1024px) {
-  tbody td {
-    width: 130px;
-    height: 130px;
-  
-  }
-  .Navbar-items {
-    font-size: x-large;
-  }
-
-
-  .close-button span {
-    font-size: x-large;
-  }
-
-  .close-button p {
-    font-size: 200%;
-  }
-.popup {
-  font-size: xx-large;
-}
-  
-
-}
-
-@media only screen and (min-width: 280px) {
-  
-  .Board {
-    width: 90%;
-  }
-  
-}
-
-@media only screen and (width: 1024px) {
-  .Board {
-    width: 90%;
-  }
-  
-}
-*/
-/*
-@media only screen and (min-height: 1023px) {
-  tbody td {
-    width: 130px;
-    height: 2130px;
-  
-  }
-  .Navbar-items {
-    font-size: x-large;
-  }
-
-
-  .close-button span {
-    font-size: x-large;
-  }
-
-  .close-button p {
-    font-size: 200%;
-  }
-.popup {
-  font-size: xx-large;
-}
-  
-}
-*/
 
 /* za Nest Hub, Nest Hub Max */
 @media only screen and (min-width: 1024px) {
@@ -236,7 +145,6 @@ tbody td {
 }
 
 /* za IPad & IPad Pro*/
-
 @media only screen and (min-height: 1024px) {
   .Login {
     width: 90%;
@@ -317,9 +225,9 @@ tbody td {
     font-size: 40px;
   }
 
-.main-container p  {
-  font-size: 50px;
-}
+  .main-container p {
+    font-size: 50px;
+  }
 }
 
 /* za mobitele*/
@@ -327,13 +235,6 @@ tbody td {
   .Login {
     width: 90%;
   }
-
-  /*
-tbody td {
-  width: 85px;
-  height: 85px;  
-}
-*/
 
   .Board {
     width: 90%;
@@ -408,19 +309,20 @@ tr td {
 }
 
 .popup {
-  position: absolute;
-  top: 28%;
+  position: fixed;
+  top: 35%;
   right: 50%;
   left: 50%;
   width: 70%;
-  height: 30%;
+  height: 37%;
   /*bottom: 60%;
   */
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   overflow: hidden;
-  overflow-y: auto;
+  /*  overflow-y: auto;
   overflow-x: auto;
+ */
   margin: 0px;
   padding: 10px;
   /* background-color: rgb(76, 0, 130);
@@ -429,6 +331,19 @@ tr td {
   border: 1px solid cyan;
   border-radius: 3px;
   margin-top: 0px;
+}
+
+.scroll {
+  position: fixed;
+  
+  width: 97%;
+  height: 70%;
+  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: auto;
+ padding: 0 2px 10px 5px;
+
+margin: 2px;
 }
 
 .close-button {
