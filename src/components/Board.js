@@ -30,7 +30,13 @@ const Board = ({
     setTrigger(false);
     setCells(Array(9).fill(null));
     setWinner(null);
-    setTurn(players[players.length - 2]);
+    // setTurn( counter % 2 ? players[players.length - 1] : players[players.length -2]);
+    setTurn(
+      (count1 + count2 + ties) % 2
+        ? players[players.length - 1]
+        : players[players.length - 2]
+    );
+
     setTimeout(() => {
       setTrigger(true);
     }, 5000);
@@ -95,7 +101,10 @@ const Board = ({
         id: new Date().toString(),
         text: versus + ": " + players[players.length - 1] + " won ",
       };
-      let isDraw = { id: new Date().toString(), text: versus + ": Tie !" /* ": draw"*/ };
+      let isDraw = {
+        id: new Date().toString(),
+        text: versus + ": Tie !" /* ": draw"*/,
+      };
 
       if (
         squares[a] &&
@@ -103,25 +112,30 @@ const Board = ({
         squares[a] === squares[c]
       ) {
         if (squares[a] && turn === players[players.length - 2]) {
-          setWinner("You winn " + players[players.length - 2] + " !!");
+          setWinner("You win " + players[players.length - 2] + " !!");
           setGameHistory([newHistory1, ...gameHistory]);
           setCount1((prevCount1) => prevCount1 + 1);
-          //  return;
+          if (!squares.includes(null)) {
+            setTies((prevTies) => prevTies - 1);
+          }
+          return;
         } else {
           setWinner("You win " + players[players.length - 1] + " !!");
           setGameHistory([newHistory2, ...gameHistory]);
           setCount2((prevCount2) => prevCount2 + 1);
-
-          //  return;
+          if (!squares.includes(null)) {
+            setTies((prevTies) => prevTies - 1);
+         }
+          return;
         }
-      }
-      if (!squares.includes(null)) {
+       
+      } if (!squares.includes(null)) {
+        setTies(ties + 1);
         setWinner("Tie !");
         setGameHistory([isDraw, ...gameHistory]);
-        setTies(ties + 1);
       }
     }
-    //   return;
+    return null;
   };
 
   const List = () => {
@@ -137,16 +151,22 @@ const Board = ({
             <span>Game History :</span>
             <button>X</button>
           </div>
-          
           &nbsp;
-          {gameHistory.map((newHistory) => (
-            <p
-              key={newHistory.id}
-              style={{ fontSize: "90%", fontWeight:"normal" , margin: "0px", padding: "0px" }}
-            >
-              {newHistory.text}
-            </p>
-          ))}
+          <div className="scroll">
+            {gameHistory.map((newHistory) => (
+              <p
+                key={newHistory.id}
+                style={{
+                  fontSize: "90%",
+                  fontWeight: "normal",
+                  margin: "0px",
+                  padding: "0px",
+                }}
+              >
+                {newHistory.text}
+              </p>
+            ))}
+          </div>
         </div>
       </div>
     );
@@ -173,7 +193,6 @@ const Board = ({
             ties={ties}
           />
           <div className="span12">
-            
             <span className="span2">its</span>
             &nbsp;
             <span className="turn">{turn} </span>
